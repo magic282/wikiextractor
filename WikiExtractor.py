@@ -2625,7 +2625,8 @@ def compact(text):
             if options.keepSections:
                 items = sorted(headers.items())
                 for i, v in items:
-                    page.append(v)
+                    # page.append(v)
+                    page.append("###SEC###{0}###SEC###".format(v))
             headers.clear()
             page.append(line)  # first line
             emptySection = False
