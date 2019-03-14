@@ -725,6 +725,9 @@ class Extractor(object):
             res += unescape(text[cur:m.start()]) + m.group(1)
             cur = m.end()
         text = res + unescape(text[cur:])
+
+        # magic282
+        text = text.replace('<br>', '\n').replace('<hr>', '\n')
         return text
 
 
